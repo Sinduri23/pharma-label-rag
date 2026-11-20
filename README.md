@@ -10,14 +10,14 @@ a FastAPI service, CI and Docker.
 
 ```mermaid
 flowchart LR
-  A[openFDA labels] --> B[Section-aware chunking]
-  B --> C[Embeddings]
-  C --> D[(FAISS index)]
-  Q[Question] --> E[Drug detection + retrieval top-k]
+  A["openFDA labels"] --> B["Section-aware chunking"]
+  B --> C["Embeddings"]
+  C --> D[("FAISS index")]
+  Q["Question"] --> E["Drug detection + retrieval top-k"]
   D --> E
-  E --> F[Claude: answer using ONLY numbered passages, cite [n]]
-  F --> G[Citation validation + refusal detection]
-  G --> H[FastAPI /ask + logs: latency, tokens]
+  E --> F["Claude: answer using ONLY numbered passages, cite (n)"]
+  F --> G["Citation validation + refusal detection"]
+  G --> H["FastAPI /ask + logs: latency, tokens"]
 ```
 
 Design choices (and why):
